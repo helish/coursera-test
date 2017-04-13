@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .message { font-size: 1.3em; 
+				   font-weight: bold;
+				   color: green;
+				   border : 1px solid green;
+				   }				
+    </style>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+  </head>
+<body ng-app="LunchCkecker">
+   <div class="container" ng-controller="LunchCkeckerController">
+     <h1>Lunch Checker</h1>
+		<form name="myForm" class="form-group">
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control"
+			 name="lunchmenu"
+			 ng-model="lunchmenu"
+			 required>
+			 
+         </div>
+		
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="tooMuch(lunchmenu);" ng-disabled="myForm.$invalid">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-bind="msg">
+		  
+			
+           <!-- Your message can go here. -->
+         </div>
+		 <span ng-show="myForm.lunchmenu.$error.required" style="color :red; border:1px solid black;">
+				Please enter data first
+			</span><br/>
+   </div>
+
+</body>
+</html>

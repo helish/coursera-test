@@ -1,0 +1,9 @@
+.form-control.ng-valid {
+      color: green;
+	  border : 1 px solid green;
+ }
+ .form-control.ng-dirty.ng-invalid-required {
+	  color: red;
+	  border : 1 px solid red; 
+ }
+  
